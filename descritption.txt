@@ -1,2 +1,4 @@
-I have done exception from both server side and client side to check if a customer ID exists.
-hej
+1.I have done exception from both server side and client side to check if a customer ID exists.
+If an ID doesn't exit, the server side will throw new FaultException to catch the error.
+2.I have chosen to use 2 bindings which are wsHTTPbinding and netTCPbinding since both bindings has security enabled. 
+wsHTTPbinding is secure at the message level and netTCPbinding is secure at the transport level.
