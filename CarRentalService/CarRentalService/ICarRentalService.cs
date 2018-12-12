@@ -26,30 +26,6 @@ namespace CarRentalService
         [OperationContract]
         void DeleteCar(CarRequest request);
 
-        [OperationContract]
-        CustomerInfo GetCustomer(CustomerRequest request);
-
-        [OperationContract]
-        List<Customer> GetCustomers();
-
-        [OperationContract]
-        void SaveCustomer(CustomerInfo customer);
-
-        [OperationContract]
-        void UpdateCustomer(CustomerInfo customer);
-
-
-        [OperationContract]
-        void DeleteCustomer(CustomerRequest request);
-
-        [OperationContract]
-        BookingInfo GetBooking(BookingRequest request);
-
-        [OperationContract]
-        void SaveBooking(BookingInfo booking);
-
-        [OperationContract]
-        void DeleteBooking(BookingRequest request);
     }
 
 }

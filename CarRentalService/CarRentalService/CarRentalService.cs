@@ -13,7 +13,7 @@ using System.Net;
 namespace CarRentalService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "CarRentalService" in both code and config file together.
-    public class CarRentalService : ICarRentalService
+    public class CarRentalService : ICarRentalService, ICustomerService
     {
         public CarInfo GetCar(CarRequest request)
         {
@@ -36,10 +36,6 @@ namespace CarRentalService
                     parameterId.Value = request.CarId;
 
                     cmd.Parameters.Add(parameterId);
-
-                    
-                    // Kolla om id finns. Om inte
-                    // throw new FaultException("Id does not exist");
                     
                     con.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
