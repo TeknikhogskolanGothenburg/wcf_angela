@@ -12,7 +12,7 @@ namespace CarRentalWebClient
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack){
-                CarRentalService.CarRentalServiceClient client = new CarRentalService.CarRentalServiceClient("WSHttpBinding_ICarRentalService");
+                CarRentalService.ICustomerService client = new CarRentalService.CustomerServiceClient("WSHttpBinding_ICustomerService");
                 List<CarRentalService.Customer> customers = client.GetCustomers().ToList();
                 var contractCustomers = customers.Where(c => Convert.ToInt32(c.CustomerType) == 2).ToList();
                 rptCustomers.DataSource = contractCustomers;

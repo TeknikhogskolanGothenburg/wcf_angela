@@ -16,7 +16,7 @@ namespace CarRentalWebClient
 
         protected void btnDeleteBoooking_Click(object sender, EventArgs e)
         {
-            CarRentalService.ICarRentalService client = new CarRentalService.CarRentalServiceClient("WSHttpBinding_ICarRentalService");
+            CarRentalService.IBookingService client = new CarRentalService.BookingServiceClient("WSHttpBinding_IBookingService");
             CarRentalService.BookingRequest request = new CarRentalService.BookingRequest();
             request.LicenseKey = "secret";
             request.BookingId = Convert.ToInt32(txtDeleteBooking.Text);

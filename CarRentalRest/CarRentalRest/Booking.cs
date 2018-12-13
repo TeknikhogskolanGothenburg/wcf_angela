@@ -8,56 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarRentalRest
 {
-    [MessageContract(IsWrapped = true,
-       WrapperName = "BookingRequestObject", WrapperNamespace = "")]
-    public class BookingRequest
-    {
-        [MessageHeader(Namespace = "")]
-        public string LicenseKey { get; set; }
-
-        [MessageBodyMember(Namespace = "")]
-        public int BookingId { get; set; }
-    }
-
-
-    [MessageContract(IsWrapped = true,
-        WrapperName = "BookingInfoObject", WrapperNamespace = "")]
-    public class BookingInfo
-    {
-        public BookingInfo() { }
-
-        public BookingInfo(Booking booking)
-        {
-            this.Id = booking.Id;
-            this.StartTime = booking.StartTime;
-            this.ReturnTime = booking.ReturnTime;
-            this.CustomerId = booking.CustomerId;
-            this.CarId = booking.CarId;
-        }
-
-        [MessageBodyMember(Order = 1, Namespace = "")]
-        public int Id { get; set; }
-
-        [MessageBodyMember(Order = 2, Namespace = "")]
-        public DateTime StartTime { get; set; }
-
-        [MessageBodyMember(Order = 3, Namespace = "")]
-        public DateTime ReturnTime { get; set; }
-
-        [MessageBodyMember(Order = 4, Namespace = "")]
-        public int CustomerId { get; set; }
-
-        [MessageBodyMember(Order = 5, Namespace = "")]
-        public int CarId { get; set; }
-
-        [MessageBodyMember(Order = 6, Namespace = "")]
-        public Customer Customer { get; set; }
-
-        [MessageBodyMember(Order = 7, Namespace = "")]
-        public Car Car { get; set; }
-    }
-
-
+    
 
     [DataContract]
     public class Booking

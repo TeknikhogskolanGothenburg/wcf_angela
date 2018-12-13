@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRentalRest.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -8,140 +9,102 @@ using System.Text;
 namespace CarRentalRest
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "CarRentalRestService" in both code and config file together.
-    public class CarRentalRestService : ICarRentalRestService
+    public class CarRentalRestService : ICarRentalRestService,IBookingService,ICustomerService
     {
-        private List<Car> cars;
-        private List<Customer> customers;
-        private List<Booking> bookings;
+       
+        DataContext dataContext = new DataContext();
 
-        public CarRentalRestService()
+        public Car GetCar(Car newCar)
         {
-            cars = new List<Car>
-            {
-               new Car
-               {
-                   Id=1,
-                   RegisterNumber="ABC123",
-                   Brand="BMW",
-                   Model="X3",
-                   DayRent=500,
-                   Year=2014,
-                   Status="available"
-               }
-            };
-
-            customers = new List<Customer>
-            {
-                new Customer
-                {
-                    Id=1,
-                    FirstName="Mark",
-                    LastName="Andersson",
-                    Mobile="0723654419",
-                    Email="markander89@gmail.com",
-                    CustomerType= CustomerType.PayAsGoCustomer
-                }
-            };
-
-            bookings = new List<Booking>
-            {
-                new Booking
-                {
-                    Id=1,
-                    StartTime= new DateTime(2015,5,10),
-                    ReturnTime=new DateTime(2015,5,16),
-                    CustomerId = 1,
-                    CarId = 1
-                }
-            };
+           return dataContext.GetCar(newCar);
         }
 
-        public Car AddCar(Car newCar)
+        public void SaveCar(Car newCar)
         {
-            cars.Add(newCar);
-            return newCar;
+            dataContext.SaveCar(newCar);
+            
+           
         }
 
-        public List<Car> GetAllCars()
+        public List<Car> GetCars()
         {
-            return cars;
+            return dataContext.GetCars();
         }
 
-        public Car EditCar(Car car, int index)
+        public void UpdateCarStatus(Car car)
         {
-            var editedCar = cars.SingleOrDefault(c => c.Id == index);
+            var editedCar = dataContext.GetCars().SingleOrDefault(c => c.Id == car.Id);
             editedCar.RegisterNumber = car.RegisterNumber;
             editedCar.Brand = car.Brand;
             editedCar.Model = car.Model;
             editedCar.Year = car.Year;
             editedCar.DayRent = car.DayRent;
             editedCar.Status = car.Status;
-            return editedCar;
         }
 
-        public void RemoveCar(Car car)
+        public void DeleteCar(Car car)
         {
-            cars.Remove(car);
+            dataContext.GetCars().Remove(car);
         }
 
-        public Customer AddCustomer(Customer newCustomer)
+        public Customer GetCustomer(Customer newCustomer)
         {
-            customers.Add(newCustomer);
-            return newCustomer;
+            return dataContext.GetCustomer(newCustomer);
         }
 
-        public Customer EditCustomer(Customer customer, int index)
+        public List<Customer> GetCustomers()
         {
-            var editedCustomer = customers.SingleOrDefault(c => c.Id == index);
+            return dataContext.GetCustomers();
+        }
+
+
+        public void SaveCustomer(Customer newCustomer)
+        {
+            dataContext.GetCustomers().Add(newCustomer);
+
+        }
+
+        public void UpdateCustomer(Customer customer,int id)
+        {
+            var editedCustomer = dataContext.GetCustomers().SingleOrDefault(c => c.Id == id);
             editedCustomer.FirstName = customer.FirstName;
             editedCustomer.LastName = customer.LastName;
             editedCustomer.Email = customer.Email;
             editedCustomer.Mobile = customer.Mobile;
             editedCustomer.CustomerType = customer.CustomerType;
-            return editedCustomer;
         }
 
-        public List<Customer> GetAllCustomers()
+       
+        public void DeleteCustomer(Customer customer)
         {
-            return customers;
+            dataContext.GetCustomers().Remove(customer);
         }
 
-        public void RemoveCustomer(Customer customer)
+        public Booking GetBooking(Booking newBooking)
         {
-            customers.Remove(customer);
+            return dataContext.GetBooking(newBooking);
         }
 
-        public Booking AddBooking(Booking newBooking)
+        public Booking SaveBooking(Booking newBooking)
         {
-            bookings.Add(newBooking);
+            dataContext.GetBookings().Add(newBooking);
             return newBooking;
         }
 
 
         public List<Booking> GetAllBookings()
         {
-            return bookings;
+            return dataContext.GetBookings();
         }
 
         public void RemoveBooking(Booking booking)
         {
-            bookings.Remove(booking);
+            dataContext.GetBookings().Remove(booking);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public void UpdateCarStatus(Customer customer, int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

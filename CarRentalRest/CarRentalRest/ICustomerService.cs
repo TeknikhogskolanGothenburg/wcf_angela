@@ -1,52 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CarRentalRest
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "ICarRentalRestService" in both code and config file together.
     [ServiceContract]
-    public interface ICarRentalRestService
+    public interface ICustomerService
     {
         [OperationContract]
-        [WebGet(UriTemplate = "Car/id",
+        [WebGet(UriTemplate = "Customer/id",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        Car GetCar(Car car);
+        Customer GetCustomer(Customer newCustomer);
 
         [OperationContract]
-        [WebGet(UriTemplate = "Cars",
+        [WebGet(UriTemplate = "Customers",
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
-        List<Car> GetCars();
+        List<Customer> GetCustomers();
 
         [OperationContract]
         [WebInvoke(Method = "POST",
-            UriTemplate = "SaveCar",
+            UriTemplate = "SaveCustomer",
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
-        void SaveCar(Car car);
+        void SaveCustomer(Customer newCustomer);
 
         [OperationContract]
         [WebInvoke(Method = "UPDATE",
-            UriTemplate = "UpdateCar",
-            RequestFormat = WebMessageFormat.Json,
-            ResponseFormat = WebMessageFormat.Json,
-            BodyStyle = WebMessageBodyStyle.Wrapped)]
-        void UpdateCarStatus(Car car);
+           UriTemplate = "UpdateCustomer/id",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.Wrapped)]
+        void UpdateCarStatus(Customer customer, int id);
 
         [OperationContract]
         [WebInvoke(Method = "DELETE",
-            UriTemplate = "Delete",
+            UriTemplate = "Customer/id",
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
-        void DeleteCar(Car car);
+        void DeleteCustomer(Customer customer);
+
+
 
     }
 }

@@ -18,5 +18,8 @@ namespace CarRentalService
 
         [OperationContract]
         void DeleteBooking(BookingRequest request);
+
+        [OperationContract]
+        List<Booking> GetBookings();
     }
 }

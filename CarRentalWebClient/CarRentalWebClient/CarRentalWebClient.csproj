@@ -118,12 +118,12 @@
     <Content Include="Connected Services\CarRentalService\CarRentalWebClient.CarRentalService.BookingInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\CarRentalService\CarRentalWebClient.CarRentalService.Booking.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\CarRentalService\item.disco" />
     <None Include="Connected Services\CarRentalService\configuration91.svcinfo" />
     <None Include="Connected Services\CarRentalService\configuration.svcinfo" />
-    <None Include="Connected Services\CarRentalService\item3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\CarRentalService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

@@ -13,9 +13,10 @@ namespace CarRentalWebClient
         {
             if (!IsPostBack)
             {
-                CarRentalService.CarRentalServiceClient client = new CarRentalService.CarRentalServiceClient("WSHttpBinding_ICarRentalService");
+                CarRentalService.ICarRentalService client = new CarRentalService.CarRentalServiceClient("WSHttpBinding_ICarRentalService");
+                CarRentalService.ICustomerService client1 = new CarRentalService.CustomerServiceClient("WSHttpBinding_ICustomerService");
                 List<CarRentalService.Car> cars = client.GetCars().ToList();
-                List<CarRentalService.Customer> customers = client.GetCustomers().ToList();
+                List<CarRentalService.Customer> customers = client1.GetCustomers().ToList();
              
 
                 List<String> carDropDownList = new List<string>();
@@ -49,8 +50,9 @@ namespace CarRentalWebClient
 
         protected void bookBtn_Click(object sender, EventArgs e)
         {
-            CarRentalService.ICarRentalService client = new CarRentalService.CarRentalServiceClient("WSHttpBinding_ICarRentalService");
-            
+            CarRentalService.IBookingService client = new CarRentalService.BookingServiceClient("WSHttpBinding_IBookingService");
+            CarRentalService.ICarRentalService client1 = new CarRentalService.CarRentalServiceClient("WSHttpBinding_ICarRentalService");
+
             CarRentalService.BookingInfo booking = new CarRentalService.BookingInfo();
             CarRentalService.CarInfo car = new CarRentalService.CarInfo();
             booking.Id = Convert.ToInt32(txtBooking.Text);
@@ -64,7 +66,7 @@ namespace CarRentalWebClient
         
 
             client.SaveBooking(booking);
-            client.UpdateCarStatus(car);
+            client1.UpdateCarStatus(car);
 
             lblMessageBooking.Text = "Booking saved";
 

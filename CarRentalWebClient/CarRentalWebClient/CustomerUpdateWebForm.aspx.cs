@@ -18,7 +18,7 @@ namespace CarRentalWebClient
         }
         protected void customerSearchByHttpBtn_Click(object sender, EventArgs e)
         {
-            CarRentalService.ICarRentalService client = new CarRentalService.CarRentalServiceClient("WSHttpBinding_ICarRentalService");
+            CarRentalService.ICustomerService client = new CarRentalService.CustomerServiceClient("WSHttpBinding_ICustomerService");
             CarRentalService.CustomerRequest request = new CarRentalService.CustomerRequest();
             request.LicenseKey = "secret";
             request.CustomerId = Convert.ToInt32(customerIdTxt.Text);
@@ -46,14 +46,14 @@ namespace CarRentalWebClient
             catch (Exception ex)
             {
                 lblMessageUpdateCustomer.Text = "Customer Not Found";
-                client = new CarRentalService.CarRentalServiceClient("WSHttpBinding_ICarRentalService");
+                client = new CarRentalService.CustomerServiceClient("WSHttpBinding_ICustomerService");
                 customer = null;
             }
         }
 
         protected void customerSearchByTCPBtn_Click(object sender, EventArgs e)
         {
-            CarRentalService.ICarRentalService client = new CarRentalService.CarRentalServiceClient("NetTcpBinding_ICarRentalService");
+            CarRentalService.ICustomerService client = new CarRentalService.CustomerServiceClient("netTcpBinding_ICustomerService");
             CarRentalService.CustomerRequest request = new CarRentalService.CustomerRequest();
             request.LicenseKey = "secret";
             request.CustomerId = Convert.ToInt32(customerIdTxt.Text);
@@ -79,9 +79,8 @@ namespace CarRentalWebClient
 
         protected void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
-            CarRentalService.ICarRentalService client = new
-                   CarRentalService.CarRentalServiceClient();
-            
+            CarRentalService.ICustomerService client = new CarRentalService.CustomerServiceClient("WSHttpBinding_ICustomerService");
+
             CarRentalService.CustomerInfo customer = new CarRentalService.CustomerInfo();
 
            

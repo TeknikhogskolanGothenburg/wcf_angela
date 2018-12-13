@@ -8,60 +8,9 @@ using System.Threading.Tasks;
 
 namespace CarRentalRest
 {
-    [MessageContract(IsWrapped = true,
-     WrapperName = "CarRequestObject", WrapperNamespace = "")]
-    public class CarRequest
-    {
-        [MessageHeader(Namespace = "")]
-        public string LicenseKey { get; set; }
+   
 
-        [MessageBodyMember(Namespace = "")]
-        public int CarId { get; set; }
-
-    }
-
-
-    [MessageContract(IsWrapped = true,
-        WrapperName = "CarInfoObject", WrapperNamespace = "")]
-    public class CarInfo
-    {
-        public CarInfo() { }
-
-        public CarInfo(Car car)
-        {
-            this.Id = car.Id;
-            this.RegisterNumber = car.RegisterNumber;
-            this.Brand = car.Brand;
-            this.Model = car.Model;
-            this.DayRent = car.DayRent;
-            this.Year = car.Year;
-            this.Status = car.Status;
-        }
-
-        [MessageBodyMember(Order = 1, Namespace = "")]
-        public int Id { get; set; }
-
-        [MessageBodyMember(Order = 2, Namespace = "")]
-        public string RegisterNumber { get; set; }
-
-        [MessageBodyMember(Order = 3, Namespace = "")]
-        public string Brand { get; set; }
-
-        [MessageBodyMember(Order = 4, Namespace = "")]
-        public string Model { get; set; }
-
-        [MessageBodyMember(Order = 5, Namespace = "")]
-        public int DayRent { get; set; }
-
-        [MessageBodyMember(Order = 6, Namespace = "")]
-        public int Year { get; set; }
-
-        [MessageBodyMember(Order = 7, Namespace = "")]
-        public string Status { get; set; }
-
-    }
-
-    [DataContract(Namespace = "")]
+    [DataContract]
     public class Car
     {
         private int _id;

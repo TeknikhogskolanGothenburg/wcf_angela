@@ -21,8 +21,7 @@ namespace CarRentalWebClient
 
         protected void btnSaveCustomer_Click(object sender, EventArgs e)
         {
-            CarRentalService.ICarRentalService client = new
-                    CarRentalService.CarRentalServiceClient("WSHttpBinding_ICarRentalService");
+            CarRentalService.ICustomerService client = new CarRentalService.CustomerServiceClient("WSHttpBinding_ICustomerService");
             CarRentalService.CustomerInfo customer = new CarRentalService.CustomerInfo();
             if (customerTypeDropDownList.SelectedValue == "-1")
             {

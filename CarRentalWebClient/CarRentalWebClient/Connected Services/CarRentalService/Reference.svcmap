@@ -22,12 +22,11 @@
     <MetadataSource Address="http://localhost:8080" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="a34be937-00c3-4a7f-aa6b-220451bbe5ff" SourceId="1" SourceUrl="http://localhost:8080/?disco" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="ce559bc7-6f63-473f-9877-03dbeb0b97ba" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd1" />
-    <MetadataFile FileName="CarRentalService.wsdl" MetadataType="Wsdl" ID="8dd2e54b-2c40-491e-8729-c702cc4fa935" SourceId="1" SourceUrl="http://localhost:8080/?wsdl" />
     <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="fcb2de30-1384-421c-96d9-121e80f8ed01" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd2" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="1ad5b6a5-557f-4911-8163-e51690565bc1" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd3" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="a34be937-00c3-4a7f-aa6b-220451bbe5ff" SourceId="1" SourceUrl="http://localhost:8080/?disco" />
     <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="53feeac1-5f1c-411a-935a-4a0a1a8649b7" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd0" />
+    <MetadataFile FileName="CarRentalService.wsdl" MetadataType="Wsdl" ID="8dd2e54b-2c40-491e-8729-c702cc4fa935" SourceId="1" SourceUrl="http://localhost:8080/?wsdl" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="ce559bc7-6f63-473f-9877-03dbeb0b97ba" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -15,7 +15,7 @@ namespace CarRentalWebClient.CarRentalService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Car", Namespace="")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Car", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService")]
     [System.SerializableAttribute()]
     public partial class Car : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -322,6 +322,147 @@ namespace CarRentalWebClient.CarRentalService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Booking", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService")]
+    [System.SerializableAttribute()]
+    public partial class Booking : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private CarRentalWebClient.CarRentalService.Car CarField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CarIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private CarRentalWebClient.CarRentalService.Customer CustomerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CustomerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ReturnTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime StartTimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CarRentalWebClient.CarRentalService.Car Car {
+            get {
+                return this.CarField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CarField, value) != true)) {
+                    this.CarField = value;
+                    this.RaisePropertyChanged("Car");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CarId {
+            get {
+                return this.CarIdField;
+            }
+            set {
+                if ((this.CarIdField.Equals(value) != true)) {
+                    this.CarIdField = value;
+                    this.RaisePropertyChanged("CarId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CarRentalWebClient.CarRentalService.Customer Customer {
+            get {
+                return this.CustomerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
+                    this.CustomerField = value;
+                    this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustomerId {
+            get {
+                return this.CustomerIdField;
+            }
+            set {
+                if ((this.CustomerIdField.Equals(value) != true)) {
+                    this.CustomerIdField = value;
+                    this.RaisePropertyChanged("CustomerId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ReturnTime {
+            get {
+                return this.ReturnTimeField;
+            }
+            set {
+                if ((this.ReturnTimeField.Equals(value) != true)) {
+                    this.ReturnTimeField = value;
+                    this.RaisePropertyChanged("ReturnTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime StartTime {
+            get {
+                return this.StartTimeField;
+            }
+            set {
+                if ((this.StartTimeField.Equals(value) != true)) {
+                    this.StartTimeField = value;
+                    this.RaisePropertyChanged("StartTime");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CarRentalService.ICarRentalService")]
     public interface ICarRentalService {
@@ -359,72 +500,17 @@ namespace CarRentalWebClient.CarRentalService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/DeleteCar", ReplyAction="http://tempuri.org/ICarRentalService/DeleteCarResponse")]
         System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.DeleteCarResponse> DeleteCarAsync(CarRentalWebClient.CarRentalService.CarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/GetCustomer", ReplyAction="http://tempuri.org/ICarRentalService/GetCustomerResponse")]
-        CarRentalWebClient.CarRentalService.CustomerInfo GetCustomer(CarRentalWebClient.CarRentalService.CustomerRequest request);
-        
-        // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/GetCustomer", ReplyAction="http://tempuri.org/ICarRentalService/GetCustomerResponse")]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.CustomerInfo> GetCustomerAsync(CarRentalWebClient.CarRentalService.CustomerRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/GetCustomers", ReplyAction="http://tempuri.org/ICarRentalService/GetCustomersResponse")]
-        CarRentalWebClient.CarRentalService.Customer[] GetCustomers();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/GetCustomers", ReplyAction="http://tempuri.org/ICarRentalService/GetCustomersResponse")]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.Customer[]> GetCustomersAsync();
-        
-        // CODEGEN: Generating message contract since the operation SaveCustomer is neither RPC nor document wrapped.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/SaveCustomer", ReplyAction="http://tempuri.org/ICarRentalService/SaveCustomerResponse")]
-        CarRentalWebClient.CarRentalService.SaveCustomerResponse SaveCustomer(CarRentalWebClient.CarRentalService.CustomerInfo request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/SaveCustomer", ReplyAction="http://tempuri.org/ICarRentalService/SaveCustomerResponse")]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.SaveCustomerResponse> SaveCustomerAsync(CarRentalWebClient.CarRentalService.CustomerInfo request);
-        
-        // CODEGEN: Generating message contract since the operation UpdateCustomer is neither RPC nor document wrapped.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/UpdateCustomer", ReplyAction="http://tempuri.org/ICarRentalService/UpdateCustomerResponse")]
-        CarRentalWebClient.CarRentalService.UpdateCustomerResponse UpdateCustomer(CarRentalWebClient.CarRentalService.CustomerInfo request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/UpdateCustomer", ReplyAction="http://tempuri.org/ICarRentalService/UpdateCustomerResponse")]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.UpdateCustomerResponse> UpdateCustomerAsync(CarRentalWebClient.CarRentalService.CustomerInfo request);
-        
-        // CODEGEN: Generating message contract since the operation DeleteCustomer is neither RPC nor document wrapped.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/DeleteCustomer", ReplyAction="http://tempuri.org/ICarRentalService/DeleteCustomerResponse")]
-        CarRentalWebClient.CarRentalService.DeleteCustomerResponse DeleteCustomer(CarRentalWebClient.CarRentalService.CustomerRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/DeleteCustomer", ReplyAction="http://tempuri.org/ICarRentalService/DeleteCustomerResponse")]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.DeleteCustomerResponse> DeleteCustomerAsync(CarRentalWebClient.CarRentalService.CustomerRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/GetBooking", ReplyAction="http://tempuri.org/ICarRentalService/GetBookingResponse")]
-        CarRentalWebClient.CarRentalService.BookingInfo GetBooking(CarRentalWebClient.CarRentalService.BookingRequest request);
-        
-        // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/GetBooking", ReplyAction="http://tempuri.org/ICarRentalService/GetBookingResponse")]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.BookingInfo> GetBookingAsync(CarRentalWebClient.CarRentalService.BookingRequest request);
-        
-        // CODEGEN: Generating message contract since the operation SaveBooking is neither RPC nor document wrapped.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/SaveBooking", ReplyAction="http://tempuri.org/ICarRentalService/SaveBookingResponse")]
-        CarRentalWebClient.CarRentalService.SaveBookingResponse SaveBooking(CarRentalWebClient.CarRentalService.BookingInfo request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/SaveBooking", ReplyAction="http://tempuri.org/ICarRentalService/SaveBookingResponse")]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.SaveBookingResponse> SaveBookingAsync(CarRentalWebClient.CarRentalService.BookingInfo request);
-        
-        // CODEGEN: Generating message contract since the operation DeleteBooking is neither RPC nor document wrapped.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/DeleteBooking", ReplyAction="http://tempuri.org/ICarRentalService/DeleteBookingResponse")]
-        CarRentalWebClient.CarRentalService.DeleteBookingResponse DeleteBooking(CarRentalWebClient.CarRentalService.BookingRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICarRentalService/DeleteBooking", ReplyAction="http://tempuri.org/ICarRentalService/DeleteBookingResponse")]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.DeleteBookingResponse> DeleteBookingAsync(CarRentalWebClient.CarRentalService.BookingRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CarRequestObject", WrapperNamespace="", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CarRequestObject", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
     public partial class CarRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
         public string LicenseKey;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
         public int CarId;
         
         public CarRequest() {
@@ -438,28 +524,28 @@ namespace CarRentalWebClient.CarRentalService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CarInfoObject", WrapperNamespace="", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CarInfoObject", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
     public partial class CarInfo {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
         public int Id;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
         public string RegisterNumber;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
         public string Brand;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=3)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
         public string Model;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=4)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
         public int DayRent;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=5)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
         public int Year;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=6)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
         public string Status;
         
         public CarInfo() {
@@ -503,176 +589,6 @@ namespace CarRentalWebClient.CarRentalService {
     public partial class DeleteCarResponse {
         
         public DeleteCarResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CustomerRequestObject", WrapperNamespace="", IsWrapped=true)]
-    public partial class CustomerRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
-        public string LicenseKey;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public int CustomerId;
-        
-        public CustomerRequest() {
-        }
-        
-        public CustomerRequest(string LicenseKey, int CustomerId) {
-            this.LicenseKey = LicenseKey;
-            this.CustomerId = CustomerId;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CustomerInfoObject", WrapperNamespace="", IsWrapped=true)]
-    public partial class CustomerInfo {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public int Id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
-        public string FirstName;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
-        public string LastName;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=3)]
-        public string Mobile;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=4)]
-        public string Email;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=5)]
-        public CarRentalWebClient.CarRentalService.CustomerType CustomerType;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=6)]
-        public decimal Discount;
-        
-        public CustomerInfo() {
-        }
-        
-        public CustomerInfo(int Id, string FirstName, string LastName, string Mobile, string Email, CarRentalWebClient.CarRentalService.CustomerType CustomerType, decimal Discount) {
-            this.Id = Id;
-            this.FirstName = FirstName;
-            this.LastName = LastName;
-            this.Mobile = Mobile;
-            this.Email = Email;
-            this.CustomerType = CustomerType;
-            this.Discount = Discount;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SaveCustomerResponse {
-        
-        public SaveCustomerResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UpdateCustomerResponse {
-        
-        public UpdateCustomerResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DeleteCustomerResponse {
-        
-        public DeleteCustomerResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="BookingRequestObject", WrapperNamespace="", IsWrapped=true)]
-    public partial class BookingRequest {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
-        public string LicenseKey;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public int BookingId;
-        
-        public BookingRequest() {
-        }
-        
-        public BookingRequest(string LicenseKey, int BookingId) {
-            this.LicenseKey = LicenseKey;
-            this.BookingId = BookingId;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="BookingInfoObject", WrapperNamespace="", IsWrapped=true)]
-    public partial class BookingInfo {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public int Id;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
-        public System.DateTime StartTime;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
-        public System.DateTime ReturnTime;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=3)]
-        public int CustomerId;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=4)]
-        public int CarId;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=5)]
-        public CarRentalWebClient.CarRentalService.Customer Customer;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=6)]
-        public CarRentalWebClient.CarRentalService.Car Car;
-        
-        public BookingInfo() {
-        }
-        
-        public BookingInfo(int Id, System.DateTime StartTime, System.DateTime ReturnTime, int CustomerId, int CarId, CarRentalWebClient.CarRentalService.Customer Customer, CarRentalWebClient.CarRentalService.Car Car) {
-            this.Id = Id;
-            this.StartTime = StartTime;
-            this.ReturnTime = ReturnTime;
-            this.CustomerId = CustomerId;
-            this.CarId = CarId;
-            this.Customer = Customer;
-            this.Car = Car;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SaveBookingResponse {
-        
-        public SaveBookingResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DeleteBookingResponse {
-        
-        public DeleteBookingResponse() {
         }
     }
     
@@ -825,9 +741,166 @@ namespace CarRentalWebClient.CarRentalService {
             inValue.CarId = CarId;
             return ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).DeleteCarAsync(inValue);
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CarRentalService.ICustomerService")]
+    public interface ICustomerService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomer", ReplyAction="http://tempuri.org/ICustomerService/GetCustomerResponse")]
+        CarRentalWebClient.CarRentalService.CustomerInfo GetCustomer(CarRentalWebClient.CarRentalService.CustomerRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomer", ReplyAction="http://tempuri.org/ICustomerService/GetCustomerResponse")]
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.CustomerInfo> GetCustomerAsync(CarRentalWebClient.CarRentalService.CustomerRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomers", ReplyAction="http://tempuri.org/ICustomerService/GetCustomersResponse")]
+        CarRentalWebClient.CarRentalService.Customer[] GetCustomers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomers", ReplyAction="http://tempuri.org/ICustomerService/GetCustomersResponse")]
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.Customer[]> GetCustomersAsync();
+        
+        // CODEGEN: Generating message contract since the operation SaveCustomer is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/SaveCustomer", ReplyAction="http://tempuri.org/ICustomerService/SaveCustomerResponse")]
+        CarRentalWebClient.CarRentalService.SaveCustomerResponse SaveCustomer(CarRentalWebClient.CarRentalService.CustomerInfo request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/SaveCustomer", ReplyAction="http://tempuri.org/ICustomerService/SaveCustomerResponse")]
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.SaveCustomerResponse> SaveCustomerAsync(CarRentalWebClient.CarRentalService.CustomerInfo request);
+        
+        // CODEGEN: Generating message contract since the operation UpdateCustomer is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/UpdateCustomer", ReplyAction="http://tempuri.org/ICustomerService/UpdateCustomerResponse")]
+        CarRentalWebClient.CarRentalService.UpdateCustomerResponse UpdateCustomer(CarRentalWebClient.CarRentalService.CustomerInfo request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/UpdateCustomer", ReplyAction="http://tempuri.org/ICustomerService/UpdateCustomerResponse")]
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.UpdateCustomerResponse> UpdateCustomerAsync(CarRentalWebClient.CarRentalService.CustomerInfo request);
+        
+        // CODEGEN: Generating message contract since the operation DeleteCustomer is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeleteCustomer", ReplyAction="http://tempuri.org/ICustomerService/DeleteCustomerResponse")]
+        CarRentalWebClient.CarRentalService.DeleteCustomerResponse DeleteCustomer(CarRentalWebClient.CarRentalService.CustomerRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeleteCustomer", ReplyAction="http://tempuri.org/ICustomerService/DeleteCustomerResponse")]
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.DeleteCustomerResponse> DeleteCustomerAsync(CarRentalWebClient.CarRentalService.CustomerRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CustomerRequestObject", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CustomerRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public string LicenseKey;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int CustomerId;
+        
+        public CustomerRequest() {
+        }
+        
+        public CustomerRequest(string LicenseKey, int CustomerId) {
+            this.LicenseKey = LicenseKey;
+            this.CustomerId = CustomerId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CustomerInfoObject", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CustomerInfo {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int Id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string FirstName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string LastName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string Mobile;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string Email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public CarRentalWebClient.CarRentalService.CustomerType CustomerType;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
+        public decimal Discount;
+        
+        public CustomerInfo() {
+        }
+        
+        public CustomerInfo(int Id, string FirstName, string LastName, string Mobile, string Email, CarRentalWebClient.CarRentalService.CustomerType CustomerType, decimal Discount) {
+            this.Id = Id;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Mobile = Mobile;
+            this.Email = Email;
+            this.CustomerType = CustomerType;
+            this.Discount = Discount;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveCustomerResponse {
+        
+        public SaveCustomerResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateCustomerResponse {
+        
+        public UpdateCustomerResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteCustomerResponse {
+        
+        public DeleteCustomerResponse() {
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ICustomerServiceChannel : CarRentalWebClient.CarRentalService.ICustomerService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CustomerServiceClient : System.ServiceModel.ClientBase<CarRentalWebClient.CarRentalService.ICustomerService>, CarRentalWebClient.CarRentalService.ICustomerService {
+        
+        public CustomerServiceClient() {
+        }
+        
+        public CustomerServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public CustomerServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CustomerServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CustomerServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarRentalWebClient.CarRentalService.CustomerInfo CarRentalWebClient.CarRentalService.ICarRentalService.GetCustomer(CarRentalWebClient.CarRentalService.CustomerRequest request) {
+        CarRentalWebClient.CarRentalService.CustomerInfo CarRentalWebClient.CarRentalService.ICustomerService.GetCustomer(CarRentalWebClient.CarRentalService.CustomerRequest request) {
             return base.Channel.GetCustomer(request);
         }
         
@@ -835,7 +908,7 @@ namespace CarRentalWebClient.CarRentalService {
             CarRentalWebClient.CarRentalService.CustomerRequest inValue = new CarRentalWebClient.CarRentalService.CustomerRequest();
             inValue.LicenseKey = LicenseKey;
             inValue.CustomerId = CustomerId;
-            CarRentalWebClient.CarRentalService.CustomerInfo retVal = ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).GetCustomer(inValue);
+            CarRentalWebClient.CarRentalService.CustomerInfo retVal = ((CarRentalWebClient.CarRentalService.ICustomerService)(this)).GetCustomer(inValue);
             FirstName = retVal.FirstName;
             LastName = retVal.LastName;
             Mobile = retVal.Mobile;
@@ -858,7 +931,7 @@ namespace CarRentalWebClient.CarRentalService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarRentalWebClient.CarRentalService.SaveCustomerResponse CarRentalWebClient.CarRentalService.ICarRentalService.SaveCustomer(CarRentalWebClient.CarRentalService.CustomerInfo request) {
+        CarRentalWebClient.CarRentalService.SaveCustomerResponse CarRentalWebClient.CarRentalService.ICustomerService.SaveCustomer(CarRentalWebClient.CarRentalService.CustomerInfo request) {
             return base.Channel.SaveCustomer(request);
         }
         
@@ -871,11 +944,11 @@ namespace CarRentalWebClient.CarRentalService {
             inValue.Email = Email;
             inValue.CustomerType = CustomerType;
             inValue.Discount = Discount;
-            CarRentalWebClient.CarRentalService.SaveCustomerResponse retVal = ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).SaveCustomer(inValue);
+            CarRentalWebClient.CarRentalService.SaveCustomerResponse retVal = ((CarRentalWebClient.CarRentalService.ICustomerService)(this)).SaveCustomer(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.SaveCustomerResponse> CarRentalWebClient.CarRentalService.ICarRentalService.SaveCustomerAsync(CarRentalWebClient.CarRentalService.CustomerInfo request) {
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.SaveCustomerResponse> CarRentalWebClient.CarRentalService.ICustomerService.SaveCustomerAsync(CarRentalWebClient.CarRentalService.CustomerInfo request) {
             return base.Channel.SaveCustomerAsync(request);
         }
         
@@ -888,11 +961,11 @@ namespace CarRentalWebClient.CarRentalService {
             inValue.Email = Email;
             inValue.CustomerType = CustomerType;
             inValue.Discount = Discount;
-            return ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).SaveCustomerAsync(inValue);
+            return ((CarRentalWebClient.CarRentalService.ICustomerService)(this)).SaveCustomerAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarRentalWebClient.CarRentalService.UpdateCustomerResponse CarRentalWebClient.CarRentalService.ICarRentalService.UpdateCustomer(CarRentalWebClient.CarRentalService.CustomerInfo request) {
+        CarRentalWebClient.CarRentalService.UpdateCustomerResponse CarRentalWebClient.CarRentalService.ICustomerService.UpdateCustomer(CarRentalWebClient.CarRentalService.CustomerInfo request) {
             return base.Channel.UpdateCustomer(request);
         }
         
@@ -905,11 +978,11 @@ namespace CarRentalWebClient.CarRentalService {
             inValue.Email = Email;
             inValue.CustomerType = CustomerType;
             inValue.Discount = Discount;
-            CarRentalWebClient.CarRentalService.UpdateCustomerResponse retVal = ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).UpdateCustomer(inValue);
+            CarRentalWebClient.CarRentalService.UpdateCustomerResponse retVal = ((CarRentalWebClient.CarRentalService.ICustomerService)(this)).UpdateCustomer(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.UpdateCustomerResponse> CarRentalWebClient.CarRentalService.ICarRentalService.UpdateCustomerAsync(CarRentalWebClient.CarRentalService.CustomerInfo request) {
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.UpdateCustomerResponse> CarRentalWebClient.CarRentalService.ICustomerService.UpdateCustomerAsync(CarRentalWebClient.CarRentalService.CustomerInfo request) {
             return base.Channel.UpdateCustomerAsync(request);
         }
         
@@ -922,11 +995,11 @@ namespace CarRentalWebClient.CarRentalService {
             inValue.Email = Email;
             inValue.CustomerType = CustomerType;
             inValue.Discount = Discount;
-            return ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).UpdateCustomerAsync(inValue);
+            return ((CarRentalWebClient.CarRentalService.ICustomerService)(this)).UpdateCustomerAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarRentalWebClient.CarRentalService.DeleteCustomerResponse CarRentalWebClient.CarRentalService.ICarRentalService.DeleteCustomer(CarRentalWebClient.CarRentalService.CustomerRequest request) {
+        CarRentalWebClient.CarRentalService.DeleteCustomerResponse CarRentalWebClient.CarRentalService.ICustomerService.DeleteCustomer(CarRentalWebClient.CarRentalService.CustomerRequest request) {
             return base.Channel.DeleteCustomer(request);
         }
         
@@ -934,11 +1007,11 @@ namespace CarRentalWebClient.CarRentalService {
             CarRentalWebClient.CarRentalService.CustomerRequest inValue = new CarRentalWebClient.CarRentalService.CustomerRequest();
             inValue.LicenseKey = LicenseKey;
             inValue.CustomerId = CustomerId;
-            CarRentalWebClient.CarRentalService.DeleteCustomerResponse retVal = ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).DeleteCustomer(inValue);
+            CarRentalWebClient.CarRentalService.DeleteCustomerResponse retVal = ((CarRentalWebClient.CarRentalService.ICustomerService)(this)).DeleteCustomer(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.DeleteCustomerResponse> CarRentalWebClient.CarRentalService.ICarRentalService.DeleteCustomerAsync(CarRentalWebClient.CarRentalService.CustomerRequest request) {
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.DeleteCustomerResponse> CarRentalWebClient.CarRentalService.ICustomerService.DeleteCustomerAsync(CarRentalWebClient.CarRentalService.CustomerRequest request) {
             return base.Channel.DeleteCustomerAsync(request);
         }
         
@@ -946,11 +1019,151 @@ namespace CarRentalWebClient.CarRentalService {
             CarRentalWebClient.CarRentalService.CustomerRequest inValue = new CarRentalWebClient.CarRentalService.CustomerRequest();
             inValue.LicenseKey = LicenseKey;
             inValue.CustomerId = CustomerId;
-            return ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).DeleteCustomerAsync(inValue);
+            return ((CarRentalWebClient.CarRentalService.ICustomerService)(this)).DeleteCustomerAsync(inValue);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CarRentalService.IBookingService")]
+    public interface IBookingService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookingService/GetBooking", ReplyAction="http://tempuri.org/IBookingService/GetBookingResponse")]
+        CarRentalWebClient.CarRentalService.BookingInfo GetBooking(CarRentalWebClient.CarRentalService.BookingRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookingService/GetBooking", ReplyAction="http://tempuri.org/IBookingService/GetBookingResponse")]
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.BookingInfo> GetBookingAsync(CarRentalWebClient.CarRentalService.BookingRequest request);
+        
+        // CODEGEN: Generating message contract since the operation SaveBooking is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookingService/SaveBooking", ReplyAction="http://tempuri.org/IBookingService/SaveBookingResponse")]
+        CarRentalWebClient.CarRentalService.SaveBookingResponse SaveBooking(CarRentalWebClient.CarRentalService.BookingInfo request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookingService/SaveBooking", ReplyAction="http://tempuri.org/IBookingService/SaveBookingResponse")]
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.SaveBookingResponse> SaveBookingAsync(CarRentalWebClient.CarRentalService.BookingInfo request);
+        
+        // CODEGEN: Generating message contract since the operation DeleteBooking is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookingService/DeleteBooking", ReplyAction="http://tempuri.org/IBookingService/DeleteBookingResponse")]
+        CarRentalWebClient.CarRentalService.DeleteBookingResponse DeleteBooking(CarRentalWebClient.CarRentalService.BookingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookingService/DeleteBooking", ReplyAction="http://tempuri.org/IBookingService/DeleteBookingResponse")]
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.DeleteBookingResponse> DeleteBookingAsync(CarRentalWebClient.CarRentalService.BookingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookingService/GetBookings", ReplyAction="http://tempuri.org/IBookingService/GetBookingsResponse")]
+        CarRentalWebClient.CarRentalService.Booking[] GetBookings();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookingService/GetBookings", ReplyAction="http://tempuri.org/IBookingService/GetBookingsResponse")]
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.Booking[]> GetBookingsAsync();
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="BookingRequestObject", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class BookingRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public string LicenseKey;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int BookingId;
+        
+        public BookingRequest() {
+        }
+        
+        public BookingRequest(string LicenseKey, int BookingId) {
+            this.LicenseKey = LicenseKey;
+            this.BookingId = BookingId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="BookingInfoObject", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class BookingInfo {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int Id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public System.DateTime StartTime;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public System.DateTime ReturnTime;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public int CustomerId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public int CarId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public CarRentalWebClient.CarRentalService.Customer Customer;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
+        public CarRentalWebClient.CarRentalService.Car Car;
+        
+        public BookingInfo() {
+        }
+        
+        public BookingInfo(int Id, System.DateTime StartTime, System.DateTime ReturnTime, int CustomerId, int CarId, CarRentalWebClient.CarRentalService.Customer Customer, CarRentalWebClient.CarRentalService.Car Car) {
+            this.Id = Id;
+            this.StartTime = StartTime;
+            this.ReturnTime = ReturnTime;
+            this.CustomerId = CustomerId;
+            this.CarId = CarId;
+            this.Customer = Customer;
+            this.Car = Car;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveBookingResponse {
+        
+        public SaveBookingResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteBookingResponse {
+        
+        public DeleteBookingResponse() {
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IBookingServiceChannel : CarRentalWebClient.CarRentalService.IBookingService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class BookingServiceClient : System.ServiceModel.ClientBase<CarRentalWebClient.CarRentalService.IBookingService>, CarRentalWebClient.CarRentalService.IBookingService {
+        
+        public BookingServiceClient() {
+        }
+        
+        public BookingServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public BookingServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public BookingServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public BookingServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarRentalWebClient.CarRentalService.BookingInfo CarRentalWebClient.CarRentalService.ICarRentalService.GetBooking(CarRentalWebClient.CarRentalService.BookingRequest request) {
+        CarRentalWebClient.CarRentalService.BookingInfo CarRentalWebClient.CarRentalService.IBookingService.GetBooking(CarRentalWebClient.CarRentalService.BookingRequest request) {
             return base.Channel.GetBooking(request);
         }
         
@@ -958,7 +1171,7 @@ namespace CarRentalWebClient.CarRentalService {
             CarRentalWebClient.CarRentalService.BookingRequest inValue = new CarRentalWebClient.CarRentalService.BookingRequest();
             inValue.LicenseKey = LicenseKey;
             inValue.BookingId = BookingId;
-            CarRentalWebClient.CarRentalService.BookingInfo retVal = ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).GetBooking(inValue);
+            CarRentalWebClient.CarRentalService.BookingInfo retVal = ((CarRentalWebClient.CarRentalService.IBookingService)(this)).GetBooking(inValue);
             StartTime = retVal.StartTime;
             ReturnTime = retVal.ReturnTime;
             CustomerId = retVal.CustomerId;
@@ -973,7 +1186,7 @@ namespace CarRentalWebClient.CarRentalService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarRentalWebClient.CarRentalService.SaveBookingResponse CarRentalWebClient.CarRentalService.ICarRentalService.SaveBooking(CarRentalWebClient.CarRentalService.BookingInfo request) {
+        CarRentalWebClient.CarRentalService.SaveBookingResponse CarRentalWebClient.CarRentalService.IBookingService.SaveBooking(CarRentalWebClient.CarRentalService.BookingInfo request) {
             return base.Channel.SaveBooking(request);
         }
         
@@ -986,11 +1199,11 @@ namespace CarRentalWebClient.CarRentalService {
             inValue.CarId = CarId;
             inValue.Customer = Customer;
             inValue.Car = Car;
-            CarRentalWebClient.CarRentalService.SaveBookingResponse retVal = ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).SaveBooking(inValue);
+            CarRentalWebClient.CarRentalService.SaveBookingResponse retVal = ((CarRentalWebClient.CarRentalService.IBookingService)(this)).SaveBooking(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.SaveBookingResponse> CarRentalWebClient.CarRentalService.ICarRentalService.SaveBookingAsync(CarRentalWebClient.CarRentalService.BookingInfo request) {
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.SaveBookingResponse> CarRentalWebClient.CarRentalService.IBookingService.SaveBookingAsync(CarRentalWebClient.CarRentalService.BookingInfo request) {
             return base.Channel.SaveBookingAsync(request);
         }
         
@@ -1003,11 +1216,11 @@ namespace CarRentalWebClient.CarRentalService {
             inValue.CarId = CarId;
             inValue.Customer = Customer;
             inValue.Car = Car;
-            return ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).SaveBookingAsync(inValue);
+            return ((CarRentalWebClient.CarRentalService.IBookingService)(this)).SaveBookingAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CarRentalWebClient.CarRentalService.DeleteBookingResponse CarRentalWebClient.CarRentalService.ICarRentalService.DeleteBooking(CarRentalWebClient.CarRentalService.BookingRequest request) {
+        CarRentalWebClient.CarRentalService.DeleteBookingResponse CarRentalWebClient.CarRentalService.IBookingService.DeleteBooking(CarRentalWebClient.CarRentalService.BookingRequest request) {
             return base.Channel.DeleteBooking(request);
         }
         
@@ -1015,11 +1228,11 @@ namespace CarRentalWebClient.CarRentalService {
             CarRentalWebClient.CarRentalService.BookingRequest inValue = new CarRentalWebClient.CarRentalService.BookingRequest();
             inValue.LicenseKey = LicenseKey;
             inValue.BookingId = BookingId;
-            CarRentalWebClient.CarRentalService.DeleteBookingResponse retVal = ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).DeleteBooking(inValue);
+            CarRentalWebClient.CarRentalService.DeleteBookingResponse retVal = ((CarRentalWebClient.CarRentalService.IBookingService)(this)).DeleteBooking(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.DeleteBookingResponse> CarRentalWebClient.CarRentalService.ICarRentalService.DeleteBookingAsync(CarRentalWebClient.CarRentalService.BookingRequest request) {
+        System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.DeleteBookingResponse> CarRentalWebClient.CarRentalService.IBookingService.DeleteBookingAsync(CarRentalWebClient.CarRentalService.BookingRequest request) {
             return base.Channel.DeleteBookingAsync(request);
         }
         
@@ -1027,7 +1240,15 @@ namespace CarRentalWebClient.CarRentalService {
             CarRentalWebClient.CarRentalService.BookingRequest inValue = new CarRentalWebClient.CarRentalService.BookingRequest();
             inValue.LicenseKey = LicenseKey;
             inValue.BookingId = BookingId;
-            return ((CarRentalWebClient.CarRentalService.ICarRentalService)(this)).DeleteBookingAsync(inValue);
+            return ((CarRentalWebClient.CarRentalService.IBookingService)(this)).DeleteBookingAsync(inValue);
+        }
+        
+        public CarRentalWebClient.CarRentalService.Booking[] GetBookings() {
+            return base.Channel.GetBookings();
+        }
+        
+        public System.Threading.Tasks.Task<CarRentalWebClient.CarRentalService.Booking[]> GetBookingsAsync() {
+            return base.Channel.GetBookingsAsync();
         }
     }
 }

@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -50,7 +51,10 @@
     <Compile Include="CarRentalRestService.cs" />
     <Compile Include="ContractCustomer.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Data\DataContext.cs" />
+    <Compile Include="IBookingService.cs" />
     <Compile Include="ICarRentalRestService.cs" />
+    <Compile Include="ICustomerService.cs" />
     <Compile Include="PayAsGoCustomer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -16,7 +16,7 @@ namespace CarRentalWebClient
 
         protected void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
-            CarRentalService.ICarRentalService client = new CarRentalService.CarRentalServiceClient("WSHttpBinding_ICarRentalService");
+            CarRentalService.ICustomerService client = new CarRentalService.CustomerServiceClient("WSHttpBinding_ICustomerService");
             CarRentalService.CustomerRequest request = new CarRentalService.CustomerRequest();
             request.LicenseKey = "secret";
             request.CustomerId = Convert.ToInt32(deleteCustomerTxt.Text);
