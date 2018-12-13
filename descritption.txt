@@ -10,5 +10,4 @@ wsHTTPbinding är säker vid message leveln och netTCPbinding är säker vid transpo
 Jag har Messagecontrac på alla mina klasser där jag använder carInfo, CustomerInfo och BookingInfo. När jag försöker att använda CarInfo klasses för metoden *GetCars* för att hitta alla cars i databasen, jag fick skapa en ny klass carInfo1 i min reference.cs file. Jag fick samma problem när jag använde CustomerInfo för metoden ”GetCustomers” för att hitta alla customers i databasen. Jag bytt klassen CarInfo till klassen Car på metoden ”GetCars” och ”GetCustomers” och då fungerade metoden bra.
 
 4.Och andra aktiva val du har gjort
-I used two different bindings but I create two different buttons in the same client so the client can choose one of the binding to use and switch between them
-
+Jag har två bindings för en client och jag skapade 2 knappar så att man kan välja vilken binding han/hon vill använda.
